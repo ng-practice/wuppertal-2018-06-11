@@ -1,0 +1,9 @@
+$card-width: 310px;
+
+.card {
+  width: $card-width;
+
+  .card-img {
+    width: calc($card-width - 2px);
+  }
+}

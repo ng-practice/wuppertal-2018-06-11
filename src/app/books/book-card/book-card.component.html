@@ -1,1 +1,25 @@
-<h4>{{ book.title }}</h4>
+<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+  <div class="card clickable">
+    <div class="card-img">
+      <img src="/assets/img/book-covers/dummy.png">
+    </div>
+    <div class="card-block">
+      <div class="card-title">{{ book.title }}</div>
+      <span class="card-media-title">
+        {{ book.authors }}
+      </span>
+      <p class="card-text">
+        {{ book.abstract }}
+      </p>
+      <p class="card-text">
+        Rating: {{ book.rating }}
+      </p>
+    </div>
+    <div class="card-actions">
+      <button (click)="rateUp()" class="btn btn-default">+</button>
+      <button (click)="rateDown()" class="btn btn-default">-</button>
+    </div>
+  </div>
+</div>
+
+<!-- https://vmware.github.io/clarity/documentation/v0.12/cards -->
