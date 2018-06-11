@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "api": "ts-node ./server/index.ts",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
@@ -22,7 +23,14 @@
     "@angular/router": "^6.0.3",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.1",
+    "node-json-db": "^0.7.3",
+    "clarity-ui": "~0.9",
+    "clarity-icons": "~0.9",
+    "body-parser": "^1.17.2"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^6.0.3",
