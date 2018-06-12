@@ -1,9 +1,9 @@
-<app-book-add-component (create)="addBook($event)"></app-book-add-component>
+<btc-book-add-component (create)="addBook($event)"></btc-book-add-component>
 <hr>
 <div class="books">
-  <app-book-card
+  <btc-book-card
     [book]="singleBook"
     (rate)="sortBooks($event)"
     *ngFor="let singleBook of books">
-  </app-book-card>
+  </btc-book-card>
 </div>

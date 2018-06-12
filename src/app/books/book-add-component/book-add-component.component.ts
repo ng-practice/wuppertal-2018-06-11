@@ -3,7 +3,7 @@ import { Book } from '../models/book';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-book-add-component',
+  selector: 'btc-book-add-component',
   templateUrl: './book-add-component.component.html',
   styleUrls: ['./book-add-component.component.css']
 })

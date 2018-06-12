@@ -3,7 +3,7 @@ import { BooksService } from './lib/books.service';
 import { Book } from './models/book';
 
 @Component({
-  selector: 'app-books',
+  selector: 'btc-books',
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.scss']
 })
@@ -13,7 +13,7 @@ export class BooksComponent implements OnInit {
   constructor(private booksService: BooksService) {}
 
   ngOnInit() {
-    this.books = this.booksService.getAll();
+    this.booksService.getAll().subscribe(books => (this.books = books));
   }
 
   sortBooks(book: Book) {

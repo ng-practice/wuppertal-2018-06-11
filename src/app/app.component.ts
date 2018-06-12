@@ -3,7 +3,7 @@ import { Book } from './books/models/book';
 import { BooksService } from './books/lib/books.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'btc-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
