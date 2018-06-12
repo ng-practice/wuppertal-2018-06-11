@@ -10,13 +10,4 @@ import { BooksService } from './books/lib/books.service';
 export class AppComponent {
   title = 'Workshop in Wuppertal';
   subtitle = 'Foundation Level';
-
-  books = this.booksService.getAll();
-
-  constructor(private booksService: BooksService) {}
-
-  sortBooks(book: Book) {
-    this.books.sort((current, next) => next.rating - current.rating);
-    console.log(book);
-  }
 }

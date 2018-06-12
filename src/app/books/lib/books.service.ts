@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BooksModule } from '../books.module';
 import { Book } from '../models/book';
 
-@Injectable({
-  providedIn: BooksModule
-})
+@Injectable()
 export class BooksService {
   getAll(): Book[] {
     return [
