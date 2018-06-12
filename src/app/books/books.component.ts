@@ -13,7 +13,13 @@ export class BooksComponent implements OnInit {
   constructor(private booksService: BooksService) {}
 
   ngOnInit() {
-    this.booksService.getAll().subscribe(books => (this.books = books));
+    this.booksService
+      .getAll()
+      .subscribe(
+        books => (this.books = books),
+        () => {},
+        () => console.info('COMPLETED')
+      );
   }
 
   sortBooks(book: Book) {
@@ -22,6 +28,6 @@ export class BooksComponent implements OnInit {
   }
 
   addBook(book: Book) {
-    this.booksService.add(book);
+    this.booksService.add(book).subscribe();
   }
 }

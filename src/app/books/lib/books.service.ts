@@ -1,32 +1,32 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Book } from '../models/book';
 
 @Injectable()
 export class BooksService {
-  private books = [
-    new Book(
-      '213-123-3123-43',
-      'Angular 6',
-      'One Framework for Web and Mobile',
-      ['Misko Hervery', 'Igor Minar'],
-      5
-    ),
-    new Book(
-      '533-123-3123-41',
-      'NodeJS',
-      'Server Side JavaScript',
-      ['Ryan Dahl'],
-      4
-    )
-  ];
+  api = 'http://localhost:4280';
+
+  constructor(private http: HttpClient) {}
 
   getAll(): Observable<Book[]> {
-    return of(this.books);
+    return this.http
+      .get<any[]>(`${this.api}/books`)
+      .pipe(
+        map(booksRaw => booksRaw.map(b => new Book(
+          b.isbn,
+          b.title,
+          b.description,
+          b.authors,
+          b.rating,
+          b.cover
+        )))
+      );
   }
 
-  add(book: Book): void {
-    this.books.push(book);
+  add(book: Book): Observable<void> {
+    return this.http.post<void>(`${this.api}/book`, book);
   }
 }

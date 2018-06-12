@@ -4,6 +4,7 @@ export class Book {
     public title: string,
     public abstract: string,
     public authors: string[],
-    public rating: number
+    public rating = 0,
+    public cover = '/assets/img/book-covers/dummy.png'
   ) {}
 }
