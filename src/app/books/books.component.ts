@@ -20,4 +20,8 @@ export class BooksComponent implements OnInit {
     this.books.sort((current, next) => next.rating - current.rating);
     console.log(book);
   }
+
+  addBook(book: Book) {
+    this.booksService.add(book);
+  }
 }

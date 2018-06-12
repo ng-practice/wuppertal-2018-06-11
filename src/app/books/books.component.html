@@ -1,5 +1,9 @@
-<app-book-card
-  [book]="singleBook"
-  (rate)="sortBooks($event)"
-  *ngFor="let singleBook of books">
-</app-book-card>
+<app-book-add-component (create)="addBook($event)"></app-book-add-component>
+<hr>
+<div class="books">
+  <app-book-card
+    [book]="singleBook"
+    (rate)="sortBooks($event)"
+    *ngFor="let singleBook of books">
+  </app-book-card>
+</div>

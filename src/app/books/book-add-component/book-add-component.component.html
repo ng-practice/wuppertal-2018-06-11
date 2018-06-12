@@ -1,0 +1,22 @@
+<form class="container">
+  <section class="form-block">
+    <label>New Book</label>
+    <div class="form-group">
+      <label for="isbn">ISBN</label>
+      <input #isbn type="text" id="isbn" placeholder="Enter a valid ISBN" size="35">
+    </div>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input #title type="text" id="title" placeholder="Enter the title" size="35">
+    </div>
+    <div class="form-group">
+      <label for="abstract">Abstract</label>
+      <textarea #abstract id="abstract" rows="5"></textarea>
+    </div>
+    <button
+      (click)="submitNewBook(isbn, title, abstract)"
+      type="button"
+      class="btn btn-primary">Create new Book
+    </button>
+  </section>
+</form>
