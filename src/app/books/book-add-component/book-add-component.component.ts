@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Book } from '../models/book';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-book-add-component',
@@ -11,8 +12,9 @@ export class BookAddComponent {
 
   @Output() create = new EventEmitter<Book>();
 
-  submitNewBook() {
+  submitNewBook(form: NgForm) {
     // const copy = Object.assign({}, this.book);
     this.create.emit({ ...this.book });
+    form.reset();
   }
 }
