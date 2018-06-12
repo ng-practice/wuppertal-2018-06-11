@@ -6,22 +6,13 @@ import { Book } from '../models/book';
   templateUrl: './book-add-component.component.html',
   styleUrls: ['./book-add-component.component.css']
 })
-export class BookAddComponentComponent {
+export class BookAddComponent {
+  book = new Book('', '', '', [], 0);
+
   @Output() create = new EventEmitter<Book>();
 
-  submitNewBook(
-    isbn: HTMLInputElement,
-    title: HTMLInputElement,
-    abstract: HTMLInputElement
-  ) {
-    const book = new Book(
-      isbn.value,
-      title.value,
-      abstract.value,
-      [],
-      0
-    );
-
-    this.create.emit(book);
+  submitNewBook() {
+    // const copy = Object.assign({}, this.book);
+    this.create.emit({ ...this.book });
   }
 }

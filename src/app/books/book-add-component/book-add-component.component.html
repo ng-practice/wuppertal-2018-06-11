@@ -3,18 +3,44 @@
     <label>New Book</label>
     <div class="form-group">
       <label for="isbn">ISBN</label>
-      <input #isbn type="text" id="isbn" placeholder="Enter a valid ISBN" size="35">
+      <input
+        [(ngModel)]="book.isbn"
+        required
+        #isbn="ngModel"
+        name="isbn"
+        type="text"
+        id="isbn"
+        placeholder="Enter a valid ISBN"
+        size="35">
+      <small *ngIf="isbn.invalid && (isbn.dirty || isbn.touched)">
+        This field has an error
+      </small>
+      <small *ngIf="isbn.errors?.required &&
+                    (isbn.dirty || isbn.touched)">
+        This field is required
+      </small>
     </div>
     <div class="form-group">
       <label for="title">Title</label>
-      <input #title type="text" id="title" placeholder="Enter the title" size="35">
+      <input
+        [(ngModel)]="book.title"
+        #title="ngModel"
+        name="title"
+        type="text"
+        id="title"
+        placeholder="Enter the title"
+        size="35">
     </div>
     <div class="form-group">
       <label for="abstract">Abstract</label>
-      <textarea #abstract id="abstract" rows="5"></textarea>
+      <textarea
+        [(ngModel)]="book.abstract"
+        #abstract="ngModel"
+        name="abstract"
+        id="abstract" rows="5"></textarea>
     </div>
     <button
-      (click)="submitNewBook(isbn, title, abstract)"
+      (click)="submitNewBook()"
       type="button"
       class="btn btn-primary">Create new Book
     </button>
