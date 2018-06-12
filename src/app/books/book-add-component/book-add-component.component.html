@@ -39,6 +39,16 @@
         size="35">
     </div>
     <div class="form-group">
+      <label for="title">Rating</label>
+      <input
+        [(ngModel)]="book.rating"
+        #title="ngModel"
+        name="rating"
+        type="number"
+        id="rating"
+        size="35">
+    </div>
+    <div class="form-group">
       <label for="abstract">Abstract</label>
       <textarea
         [(ngModel)]="book.abstract"

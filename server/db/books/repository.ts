@@ -30,7 +30,7 @@ module.exports = function Books(db: JsonDb) {
 
   function create(book: Book) {
     const isbn = book.isbn;
-    book.rating = book['_rating'];
+    book.rating = book['_rating'] || book.rating;
 
     if (!isbn) { return null; }
 

@@ -43,5 +43,11 @@
         "cover": "/assets/img/book-covers/angular-dpunkt.png",
         "description": "Egal, ob Sie schon Erfahrung mit AngularJS 1.x haben oder nicht – mit diesem Buch gelingt Ihnen der schnelle Einstieg in das neue Angular-Framework ab Version 4. Anhand eines anspruchsvollen Beispielprojekts lernen Sie Schritt für Schritt, wie Sie strukturierte und modularisierte Single-Page-Anwendungen entwickeln. Praktisch: Der Programmcode zu jeder einzelnen Entwicklungsphase ist auf GitHub verfügbar. So können Sie einsteigen, wo Sie wollen, und nach Wunsch Entwicklungsschritte überspringen. In einem kompakten Schnellstart-Kapitel erstellen Sie zunächst eine erste funktionierende Anwendung. Danach machen Sie sich mit grundlegenden Angular-Konzepten und Techniken vertraut: Angular CLI, Komponenten und Template-Syntax, HTTP-Anbindung, Routing, Formulare (Reactive Forms & Template Driven Forms).",
         "isbn": "3864903572"
+    },
+    "978-0-20163-361-0": {
+        "title": "Design Patterns 1",
+        "abstract": "",
+        "authors": [],
+        "cover": "/assets/img/book-covers/dummy.png"
     }
 }
