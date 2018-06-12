@@ -12,7 +12,8 @@
         "publishedAt": "2018-03-20T15:53:48.548Z",
         "cover": "/assets/img/book-covers/angular-ng-book.png",
         "_rating": 1,
-        "rating": 1
+        "rating": 1,
+        "isbn": "1546376232"
     },
     "3836239140": {
         "title": "Angular",

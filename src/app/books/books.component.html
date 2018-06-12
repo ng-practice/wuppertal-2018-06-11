@@ -1,9 +1,15 @@
-<btc-book-add-component (create)="addBook($event)"></btc-book-add-component>
+<btc-book-add-component
+  (create)="addBook($event)">
+</btc-book-add-component>
 <hr>
+
+<div *ngIf="errorMessage">{{ errorMessage }}</div>
+
 <div class="books">
   <btc-book-card
     [book]="singleBook"
     (rate)="sortBooks($event)"
+    (delete)="deleteBook($event)"
     *ngFor="let singleBook of books">
   </btc-book-card>
 </div>

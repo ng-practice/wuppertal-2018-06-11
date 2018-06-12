@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, empty } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
+import { throwError } from 'rxjs';
 import { Book } from '../models/book';
 
 @Injectable()
@@ -15,18 +16,34 @@ export class BooksService {
     return this.http
       .get<any[]>(`${this.api}/books`)
       .pipe(
-        map(booksRaw => booksRaw.map(b => new Book(
-          b.isbn,
-          b.title,
-          b.description,
-          b.authors,
-          b.rating,
-          b.cover
-        )))
+        map(booksRaw =>
+          booksRaw.map(
+            b =>
+              new Book(
+                b.isbn,
+                b.title,
+                b.description,
+                b.authors,
+                b.rating,
+                b.cover
+              )
+          )
+        )
       );
   }
 
   add(book: Book): Observable<void> {
     return this.http.post<void>(`${this.api}/book`, book);
+  }
+
+  delete(isbn: string): Observable<void> {
+    return this.http
+      .delete<void>(`${this.api}/book/${isbn}`)
+      .pipe(
+        // catchError(err => empty())
+        catchError(() =>
+          throwError('Uups, an error was thrown deleting your book')
+        )
+      );
   }
 }

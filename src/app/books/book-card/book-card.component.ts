@@ -11,6 +11,7 @@ export class BookCardComponent {
   @Input() book: Book;
   // <btc-book-card (rate)="sortBooks()"></btc-book-card>
   @Output() rate = new EventEmitter<Book>();
+  @Output() delete = new EventEmitter<string>();
 
   rateUp() {
     this.book.rating++;
@@ -20,5 +21,9 @@ export class BookCardComponent {
   rateDown() {
     this.book.rating--;
     this.rate.emit(this.book);
+  }
+
+  deleteBook() {
+    this.delete.emit(this.book.isbn);
   }
 }
