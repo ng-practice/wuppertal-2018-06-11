@@ -15,21 +15,24 @@ export class BooksService {
   getAll(): Observable<Book[]> {
     return this.http
       .get<any[]>(`${this.api}/books`)
-      .pipe(
-        map(booksRaw =>
-          booksRaw.map(
-            b =>
-              new Book(
-                b.isbn,
-                b.title,
-                b.description,
-                b.authors,
-                b.rating,
-                b.cover
-              )
-          )
-        )
-      );
+      .pipe(map(booksRaw => booksRaw.map(bookRaw => this.createBook(bookRaw))));
+  }
+
+  getSingle(isbn: string): Observable<Book> {
+    return this.http
+      .get(`${this.api}/book/${isbn}`)
+      .pipe(map(bookRaw => this.createBook(bookRaw)));
+  }
+
+  private createBook(bookRaw: any): Book {
+    return new Book(
+      bookRaw.isbn,
+      bookRaw.title,
+      bookRaw.description,
+      bookRaw.authors,
+      bookRaw.rating,
+      bookRaw.cover
+    );
   }
 
   getAllSortedByRating(): Observable<Book[]> {
