@@ -45,6 +45,10 @@ export class BooksService {
     return this.http.post<void>(`${this.api}/book`, book);
   }
 
+  update(book: Book): Observable<void> {
+    return this.http.put<void>(`${this.api}/book`, book);
+  }
+
   delete(isbn: string): Observable<void> {
     return this.http.delete<void>(`${this.api}/book/${isbn}`).pipe(
       // catchError(err => empty())

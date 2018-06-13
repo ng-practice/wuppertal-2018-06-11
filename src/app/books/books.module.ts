@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { UtilitiesModule } from '../utilities/utilities.module';
 import { BookAddComponent } from './book-add-component/book-add-component.component';
@@ -16,6 +16,7 @@ import { IsbnPipe } from './lib/pipes/isbn.pipe';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     UtilitiesModule,
 

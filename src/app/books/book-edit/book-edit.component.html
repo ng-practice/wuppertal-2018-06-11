@@ -1,9 +1,16 @@
-<div
-  *ngIf="book$ | async as book"
-  class="container">
-  <h2>{{ book.title }} <small>{{ book.isbn }}</small></h2>
-  <p>{{ book.abstract }}</p>
-  <p>{{ book.authors }}</p>
-</div>
-
-<!-- {{ book$ | async | json }} -->
+<ng-container *ngIf="book$ | async as book">
+  <h2>{{ book.title }}</h2>
+  <form [formGroup]="bookForm">
+    <input formControlName="isbn" type="text" placeholder="type value">
+    <input formControlName="title" type="text" placeholder="type value">
+    <input formControlName="rating" type="number" placeholder="type value">
+    <textarea formControlName="abstract" type="text"></textarea>
+    <button
+      [disabled]="bookForm.invalid"
+      (click)="update()"
+      type="button"
+      class="btn btn-primary">
+      UPDATE
+    </button>
+  </form>
+</ng-container>
