@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from './lib/books.service';
 import { Book } from './models/book';
-import { switchMap, finalize } from 'rxjs/operators';
+import { switchMap, finalize, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'btc-books',
@@ -15,13 +16,11 @@ export class BooksComponent implements OnInit {
   constructor(private booksService: BooksService) {}
 
   ngOnInit() {
-    this.booksService
-      .getAll()
-      .subscribe(
-        books => (this.books = books),
-        () => {},
-        () => console.info('COMPLETED')
-      );
+    this.booksService.getAllSortedByRating().subscribe(
+      books => (this.books = books),
+      () => {},
+      () => console.info('COMPLETED')
+    );
   }
 
   sortBooks(book: Book) {
@@ -31,7 +30,7 @@ export class BooksComponent implements OnInit {
   addBook(book: Book) {
     this.booksService
       .add(book)
-      .pipe(switchMap(() => this.booksService.getAll()))
+      .pipe(switchMap(() => this.booksService.getAllSortedByRating()))
       .subscribe(books => (this.books = books));
   }
 

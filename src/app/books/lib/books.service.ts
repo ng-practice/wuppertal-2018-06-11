@@ -32,18 +32,22 @@ export class BooksService {
       );
   }
 
+  getAllSortedByRating(): Observable<Book[]> {
+    return this.getAll().pipe(
+      map(books => books.sort((a, b) => b.rating - a.rating))
+    );
+  }
+
   add(book: Book): Observable<void> {
     return this.http.post<void>(`${this.api}/book`, book);
   }
 
   delete(isbn: string): Observable<void> {
-    return this.http
-      .delete<void>(`${this.api}/book/${isbn}`)
-      .pipe(
-        // catchError(err => empty())
-        catchError(() =>
-          throwError('Uups, an error was thrown deleting your book')
-        )
-      );
+    return this.http.delete<void>(`${this.api}/book/${isbn}`).pipe(
+      // catchError(err => empty())
+      catchError(() =>
+        throwError('Uups, an error was thrown deleting your book')
+      )
+    );
   }
 }

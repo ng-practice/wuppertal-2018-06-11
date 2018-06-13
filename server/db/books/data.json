@@ -45,9 +45,26 @@
         "isbn": "3864903572"
     },
     "978-0-20163-361-0": {
-        "title": "Design Patterns 1",
+        "title": "",
         "abstract": "",
         "authors": [],
+        "rating": 0,
+        "cover": "/assets/img/book-covers/dummy.png",
+        "isbn": "978-0-20163-361-0"
+    },
+    "978-0-20163-361-1": {
+        "title": null,
+        "abstract": null,
+        "authors": [],
+        "rating": null,
+        "cover": "/assets/img/book-covers/dummy.png",
+        "isbn": "978-0-20163-361-1"
+    },
+    "978-0-20163-361-3": {
+        "title": "Detect if found model is a class",
+        "abstract": "Huhuuhu",
+        "authors": [],
+        "rating": 3,
         "cover": "/assets/img/book-covers/dummy.png"
     }
 }
