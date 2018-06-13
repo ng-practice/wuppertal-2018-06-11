@@ -6,12 +6,21 @@ import { FormsModule } from '@angular/forms';
 import { UtilitiesModule } from '../utilities/utilities.module';
 import { BookAddComponent } from './book-add-component/book-add-component.component';
 import { BookCardComponent } from './book-card/book-card.component';
+import { BooksRoutingModule } from './books-routing.module';
 import { BooksComponent } from './books.component';
 import { BooksService } from './lib/books.service';
+import { BookEditComponent } from './book-edit/book-edit.component';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, HttpClientModule, UtilitiesModule],
-  declarations: [BookCardComponent, BooksComponent, BookAddComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+    UtilitiesModule,
+
+    BooksRoutingModule
+  ],
+  declarations: [BookCardComponent, BooksComponent, BookAddComponent, BookEditComponent],
   exports: [BookCardComponent, BooksComponent],
   providers: [BooksService]
 })
