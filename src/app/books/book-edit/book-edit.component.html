@@ -2,7 +2,13 @@
   <h2>{{ book.title }}</h2>
   <form [formGroup]="bookForm">
     <input formControlName="isbn" type="text" placeholder="type value">
+    <small *ngIf="bookForm.controls.isbn.hasError('isbn')">
+        The ISBN is not valid.
+    </small>
     <input formControlName="title" type="text" placeholder="type value">
+    <small *ngIf="bookForm.controls.title.hasError('required')">
+      The title is required
+    </small>
     <input formControlName="rating" type="number" placeholder="type value">
     <textarea formControlName="abstract" type="text"></textarea>
     <button

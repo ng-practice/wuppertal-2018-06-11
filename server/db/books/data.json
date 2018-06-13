@@ -42,7 +42,8 @@
         ],
         "rating": 4,
         "cover": "/assets/img/book-covers/angular-dpunkt.png",
-        "description": "[slJD;LSKFHJ;LSDFHJ;SDFJN"
+        "description": "[slJD;LSKFHJ;LSDFHJ;SDFJN",
+        "isbn": "3864903572"
     },
     "978-0-20163-361-0": {
         "title": "",
@@ -67,5 +68,18 @@
         "rating": 3,
         "cover": "/assets/img/book-covers/dummy.png",
         "isbn": "978-0-20163-361-3"
+    },
+    "386-490-3572": {
+        "title": "Angular",
+        "abstract": "[slJD;LSKFHJ;LSDFHJ;SDFJN",
+        "authors": [
+            "Johannes Hoppe",
+            "Ferdinand Malcher",
+            "Danny Koppenhagen",
+            "Gregor Woiwode"
+        ],
+        "rating": 4,
+        "cover": "/assets/img/book-covers/angular-dpunkt.png",
+        "description": "[slJD;LSKFHJ;LSDFHJ;SDFJN"
     }
 }

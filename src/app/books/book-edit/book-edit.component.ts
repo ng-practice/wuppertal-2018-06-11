@@ -6,6 +6,7 @@ import { switchMap, tap } from 'rxjs/operators';
 
 import { BooksService } from '../lib/books.service';
 import { Book } from '../models/book';
+import { IsbnValidator } from '../lib/validators/isbn.validator';
 
 @Component({
   selector: 'btc-book-edit',
@@ -20,7 +21,8 @@ export class BookEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private fb: FormBuilder,
-    private books: BooksService
+    private books: BooksService,
+    private isbn: IsbnValidator
   ) {}
 
   ngOnInit() {
@@ -45,7 +47,7 @@ export class BookEditComponent implements OnInit {
 
   private buildForm(): FormGroup {
     return this.fb.group({
-      isbn: ['', [Validators.required, Validators.minLength(5)]],
+      isbn: ['', [Validators.required, c => this.isbn.validate(c) ]],
       title: ['', [Validators.required]],
       abstract: ['', [Validators.required]],
       rating: [0, [Validators.required]]
