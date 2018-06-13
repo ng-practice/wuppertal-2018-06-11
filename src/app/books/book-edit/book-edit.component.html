@@ -1,7 +1,9 @@
-{{ book | json }}
+<div
+  *ngIf="book$ | async as book"
+  class="container">
+  <h2>{{ book.title }} <small>{{ book.isbn }}</small></h2>
+  <p>{{ book.abstract }}</p>
+  <p>{{ book.authors }}</p>
+</div>
 
-{{ book.isbn | isbn:'#' }}
-
-<hr>
-
-{{ today | date:'dd.MM.yyyy hh:mm' }}
+<!-- {{ book$ | async | json }} -->
