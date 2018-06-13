@@ -6,7 +6,7 @@ import { BookEditComponent } from './book-edit/book-edit.component';
 import { LeaveGuard } from './lib/guards/leave.guard';
 
 const routes: Route[] = [
-  { path: 'books', component: BooksComponent },
+  { path: '', component: BooksComponent },
   {
     path: 'book/:isbn',
     component: BookEditComponent,

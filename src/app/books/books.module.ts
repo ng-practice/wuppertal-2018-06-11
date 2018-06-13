@@ -10,6 +10,7 @@ import { BooksRoutingModule } from './books-routing.module';
 import { BooksComponent } from './books.component';
 import { BooksService } from './lib/books.service';
 import { BookEditComponent } from './book-edit/book-edit.component';
+import { IsbnPipe } from './lib/pipes/isbn.pipe';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { BookEditComponent } from './book-edit/book-edit.component';
 
     BooksRoutingModule
   ],
-  declarations: [BookCardComponent, BooksComponent, BookAddComponent, BookEditComponent],
+  declarations: [BookCardComponent, BooksComponent, BookAddComponent, BookEditComponent, IsbnPipe],
   exports: [BookCardComponent, BooksComponent],
   providers: [BooksService]
 })

@@ -21,7 +21,7 @@
     </div>
     <div class="card-actions">
       <button (appClickOnce)="deleteBook()" class="btn btn-warning">DELETE</button>
-      <a [routerLink]="['/book', book.isbn]" class="btn btn-link">EDIT</a>
+      <a [routerLink]="['/books', 'book' ,book.isbn]" class="btn btn-link">EDIT</a>
     </div>
   </div>
 </div>

@@ -13,6 +13,8 @@ import { Book } from '../models/book';
 export class BookEditComponent implements OnInit {
   book: Book = {} as any;
 
+  today = new Date();
+
   constructor(private route: ActivatedRoute, private books: BooksService) {}
 
   ngOnInit() {
